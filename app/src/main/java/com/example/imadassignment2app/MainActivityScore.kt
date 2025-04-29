@@ -24,7 +24,7 @@ class MainActivityScore : AppCompatActivity() {
         val reviewButton = findViewById<Button>(R.id.button2)
         val exitButton = findViewById<Button>(R.id.button)
 
-        // Corrected: Calculate score
+        // Calculate the score
         var calculatedScore = 0
         for (i in questions.indices) {
             if (userAnswers.getOrNull(i) == correctAnswers.getOrNull(i)) {
@@ -32,10 +32,10 @@ class MainActivityScore : AppCompatActivity() {
             }
         }
 
-        // Show score
+        // Display score
         scoreText.text = "You got $calculatedScore out of ${questions.size} correct"
 
-        // Update RatingBar (show stars for correct answers)
+        // Show stars
         ratingBar.rating = calculatedScore.toFloat()
 
         // Show feedback
@@ -47,12 +47,12 @@ class MainActivityScore : AppCompatActivity() {
         }
         feedbackText.text = feedback
 
-        // Exit button closes the app
+        // Exit
         exitButton.setOnClickListener {
             finishAffinity()
         }
 
-        // Review button opens ReviewActivity
+        // Go to review screen
         reviewButton.setOnClickListener {
             val intent = Intent(this, ReviewActivity::class.java)
             intent.putExtra("questions", questions)

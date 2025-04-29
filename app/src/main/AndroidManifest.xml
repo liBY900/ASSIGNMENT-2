@@ -6,10 +6,13 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="HistoryQuizApp"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight">
 
-        //Declare MainActivity
-        <activity android:name=".MainActivity"
+        <!-- Main launcher activity -->
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,11 +20,10 @@
             </intent-filter>
         </activity>
 
-        //Declare MainActivityFlashcards
-        <activity android:name=".MainActivityFlashcards" />
-
-        //Declare MainActivityScore
-        <activity android:name=".MainActivityScore" />
+        <!-- Other internal activities -->
+        <activity android:name=".MainActivityFlashcards" android:exported="false" />
+        <activity android:name=".MainActivityScore" android:exported="false" />
+        <activity android:name=".ReviewActivity" android:exported="false" />
 
     </application>
 
