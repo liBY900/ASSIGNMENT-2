@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.imadassignment2app">
+    package= "com.example.imadassignment2app">
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/history"
         android:label="HistoryQuizApp"
-        android:roundIcon="@drawable/history"
-        android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight">
 
-        <!-- Main launcher activity -->
-        <activity
-            android:name=".MainActivity"
+        <!--Declare MainActivity -->
+        <activity android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,10 +17,14 @@
             </intent-filter>
         </activity>
 
-        <!-- Other internal activities -->
-        <activity android:name=".MainActivityFlashcards" android:exported="false" />
-        <activity android:name=".MainActivityScore" android:exported="false" />
-        <activity android:name=".ReviewActivity" android:exported="false" />
+        <!--Declare MainActivityFlashcards -->
+        <activity android:name=".MainActivityFlashcards" />
+
+        <!--Declare MainActivityScore -->
+        <activity android:name=".MainActivityScore" />
+
+        <!--Declare ReviewActivity -->
+        <activity android:name=".ReviewActivity" />
 
     </application>
 

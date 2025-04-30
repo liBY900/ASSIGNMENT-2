@@ -17,7 +17,8 @@ class MainActivityFlashcards : AppCompatActivity() {
         "South Africa got their Independence on April 27 1994"
     )
 
-    private val answers = arrayOf(false, true, false, true, true)
+    private val answers = booleanArrayOf(false, true, false, true, true)
+    private var userAnswers = BooleanArray(questions.size) // Store user answers
     private var score = 0
     private var currentQuestionIndex = 0
 
@@ -30,6 +31,7 @@ class MainActivityFlashcards : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mainflashcards)
 
+        // Initialize the class properties (not local variables!)
         questionText = findViewById(R.id.questionText)
         trueButton = findViewById(R.id.trueButton)
         falseButton = findViewById(R.id.falseButton)
@@ -51,11 +53,13 @@ class MainActivityFlashcards : AppCompatActivity() {
                 showQuestion()
                 enableAnswerButtons()
             } else {
-                // Go to score activity
+                // Send all data to MainActivityScore
                 val intent = Intent(this, MainActivityScore::class.java)
-                intent.putExtra("score", score)
+                intent.putExtra("questions", questions)
+                intent.putExtra("answers", answers)
+                intent.putExtra("userAnswers", userAnswers)
                 startActivity(intent)
-                finish() // Optional: close current activity
+                finish()
             }
         }
     }
@@ -65,6 +69,7 @@ class MainActivityFlashcards : AppCompatActivity() {
     }
 
     private fun handleAnswer(userAnswer: Boolean) {
+        userAnswers[currentQuestionIndex] = userAnswer // Store user answer
         val correctAnswer = answers[currentQuestionIndex]
         if (userAnswer == correctAnswer) {
             score++
@@ -85,7 +90,3 @@ class MainActivityFlashcards : AppCompatActivity() {
         falseButton.isEnabled = true
     }
 }
-
-
-
-
