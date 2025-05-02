@@ -24,10 +24,10 @@ This Android application, developed with Kotlin in Android Studio, is designed t
 
 This application aims to offer an engaging and educational tool for users to test and improve their history knowledge in a streamlined mobile format.
 
+Youtube link: https://youtube.com/shorts/7Q5InZVwYQ4
 Git hub link: https://github.com/liBY900/ASSIGNMENT-2.git 
 Git hub actions :![Alt text](<git hub test.png>)
 
 screenshots : 
 ![Alt text](<result screen-1.png>) ![Alt text](<review screen-1.png>) ![Alt text](<welcome page-1.png>) ![Alt text](<flashcards -1.png>)
 
-Youtube link: https://youtube.com/shorts/7Q5InZVwYQ4
